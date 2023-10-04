@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/index}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <table>
+        <tr>
+            <th>Họ và tên</th>
+            <th>Địa chỉ</th>
+            <th>Thành phố</th>
+        </tr>
+        <tr th:each="student : ${student}" >
+            <td>
+                <span th:text="${student.firstName}"></span>
+                <span th:text="${student.lastName}"></span>
+            </td>
+            <td>
+                <span th:text="${student.addressDto.district}"></span>
+            </td>
+            <td>
+                <span th:text="${student.addressDto.city}"></span>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

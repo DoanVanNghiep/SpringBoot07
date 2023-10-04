@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/index}">
+<head>
+    <meta charset="UTF-8">
+    <title>Address</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <table>
+    <tr>
+      <th>Mã địa chỉ</th>
+      <th>Thành phố</th>
+      <th>Huyện</th>
+    </tr>
+    <tr th:each="address :${address}" >
+      <td>
+        <span th:text="${address.id}"></span>
+      </td>
+      <td>
+        <span th:text="${address.city}"></span>
+      </td>
+      <td>
+        <span th:text="${address.district}"></span>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
